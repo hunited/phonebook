@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="anchorPane" fx:id="anchorPane" prefHeight="680.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.durasoft.phonebook.ViewController">
+    <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="332.0" layoutY="20.0" text="Phonebook"
+           textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </Label>
+    <SplitPane id="mainSplit" fx:id="mainSplit" dividerPositions="0.25" layoutY="60.0" prefHeight="620.0"
+               prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+               AnchorPane.topAnchor="60.0">
+        <AnchorPane>
+            <StackPane id="menuPane" fx:id="menuPane" prefHeight="620.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0"
+                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+        </AnchorPane>
+        <AnchorPane>
+            <Pane id="contactPane" fx:id="contactPane" prefHeight="620.0" prefWidth="650.0"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0">
+                <TableView id="table" fx:id="table" editable="true" prefHeight="470.0" prefWidth="590.0">
+                    <placeholder>
+                        <Label text="No data"/>
+                    </placeholder>
+                    <columns>
+                    </columns>
+                </TableView>
+                <Label layoutX="126.0" layoutY="480.0" text="Last name:"/>
+                <TextField id="inputLastName" fx:id="inputLastName" layoutX="194.0" layoutY="476.0" prefHeight="25.0"
+                           prefWidth="200.0" promptText="Last name"/>
+                <Label layoutX="126.0" layoutY="515.0" text="First name:"/>
+                <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="194.0" layoutY="511.0" prefHeight="25.0"
+                           prefWidth="200.0" promptText="First name"/>
+                <Label layoutX="126.0" layoutY="550.0" text="E-mail:"/>
+                <TextField id="inputEmail" fx:id="inputEmail" layoutX="194.0" layoutY="546.0" prefHeight="25.0"
+                           prefWidth="200.0" promptText="E-mail"/>
+                <Button id="addNewContactButton" fx:id="addNewContactButton" layoutX="438.0" layoutY="511.0"
+                        mnemonicParsing="false" onAction="#addContact" text="New contact"/>
+            </Pane>
+            <Pane id="exportPane" fx:id="exportPane" prefHeight="620.0" prefWidth="650.0" visible="false"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0">
+                <Label layoutX="119.0" layoutY="107.0" text="Filename:" textAlignment="CENTER"/>
+                <TextField id="inputExport" fx:id="inputExport" layoutX="177.0" layoutY="103.0" prefHeight="25.0"
+                           prefWidth="300.0"/>
+                <Button id="savePDF" fx:id="savePDF" layoutX="218.0" layoutY="143.0" mnemonicParsing="false"
+                        onAction="#exportList" prefHeight="40.0" prefWidth="160.0" text="Save PDF"
+                        textAlignment="CENTER"/>
+            </Pane>
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>
